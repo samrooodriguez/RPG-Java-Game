@@ -34,7 +34,7 @@ public class Adventure {
                     System.out.println("YOU WIN");
                     break;
                 }
-                System.out.println(hero.toUpperCase()+"\n"+"HP: " + hp + "\nMP: "+ mp +"\nPOTIONS: " + potions + "\n MP POTIONS: " + mpPotions);
+                System.out.println(hero.toUpperCase()+"\n"+"HP: " + hp + "\nMP: "+ mp +"\nPOTIONS: " + potions + "\nMP POTIONS: " + mpPotions);
                 System.out.println("========\n");
                 System.out.println("ENEMY\n"+"HP: "+zombiehp);
                 if(hp < 30){
