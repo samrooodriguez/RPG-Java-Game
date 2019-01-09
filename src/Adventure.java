@@ -1,17 +1,20 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Adventure {
     public static void main(String[] arg){
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        Random rand = new Random();
 
-        System.out.println("Hello there, Welcome!" + "Enter your hero name:");
+        System.out.println("Hello there, Welcome!" + " Enter your hero name:");
         String hero = scanner.next();
         boolean quest = false;
         int hp = 100;
         int potions = 3;
-        int attack = 20;
-        int zombiehp = 60;
-        int zombieattack = 30;
+        int attack = rand.nextInt(20) + 5;
+        int zombiehp = 100;
+        int zombieattack = rand.nextInt(29) + 1;
+
         System.out.println("Hello " + hero + "!" + " Do you choose to accept this adventure?");
         String userInput = scanner.next();
         if(userInput.equalsIgnoreCase("yes")|| userInput.equalsIgnoreCase("y")){
@@ -37,8 +40,12 @@ public class Adventure {
                     hp -=zombieattack;
                 }
                 else if (action == 2){
-                    hp += 15;
-                    potions -= 1;
+                    if(potions > 0){
+                        hp += 15;
+                        potions -= 1;
+                    }else{
+                        System.out.println("You are out of potions!");
+                    }
                 }
                 else if (action == 3){
                     double run = Math.random();
