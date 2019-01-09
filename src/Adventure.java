@@ -33,11 +33,23 @@ public class Adventure {
                 System.out.println("YOU\n"+"HP: " + hp + "\nPOTIONS: " + potions);
                 System.out.println("========\n");
                 System.out.println("ENEMY\n"+"HP: "+zombiehp);
+                if(hp < 30){
+                    System.out.println("Your HP is low, you feel your life fading away!");
+                }
+                if(zombiehp < 20){
+                    System.out.println("Victory seems certain!");
+                }
                 System.out.println("What do you do?\n 1. Attack\n 2. Potion\n 3. Run");
                 int action = scanner.nextInt();
                 if (action == 1){
+                    attack = rand.nextInt(20) + 5;
+                    zombieattack = rand.nextInt(29) + 1;
+                    int tempAttack = attack;
+                    int tempZombieAttack = zombieattack;
                     zombiehp -= attack;
-                    hp -=zombieattack;
+                    hp -= zombieattack;
+                    System.out.println("You hit the zombie for " + tempAttack);
+                    System.out.println("The zombie did " + tempZombieAttack + " damage.");
                 }
                 else if (action == 2){
                     if(potions > 0){
